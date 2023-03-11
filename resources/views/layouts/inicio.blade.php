@@ -94,10 +94,10 @@
                             </li>
                         @endcan
                         @can('personals.index')
-                            <li class="contenedor-sub-menu {{ request()->is('personal*') ? 'activado' : '' }}">
+                            <li class="contenedor-sub-menu {{ request()->is('personal*') ? 'activado' : '' }} {{ request()->is('personal*') || request()->is('asistencias*') || request()->is('formacion*') || request()->is('especializacion*') || request()->is('experiencia*') || request()->is('contratos*') || request()->is('pagos_extras*') || request()->is('descuentos*') || request()->is('pagos*') ? 'activado abierto' : '' }}">
                                 <a href="#"><span><i class="fa fa-users"></i></span>Personal <span class="flecha"><i
                                             class="fa fa-caret-down"></i></span></a>
-                                <ul class="sub-menu oculto" id="opciones_personal">
+                                <ul class="sub-menu {{ request()->is('personal*') || request()->is('asistencias*') || request()->is('formacion*') || request()->is('especializacion*') || request()->is('experiencia*') || request()->is('contratos*') || request()->is('pagos_extras*') || request()->is('descuentos*') || request()->is('pagos*') ? '' : 'oculto' }}" id="opciones_personal">
                                     @can('personals.index')
                                         <li
                                             class="{{ request()->is('personals') ? 'activado' : '' }} {{ request()->is('personals/show*') ? 'activado' : '' }} {{ request()->is('personals/create*') ? 'activado' : '' }} {{ request()->is('personals/edit*') ? 'activado' : '' }}">

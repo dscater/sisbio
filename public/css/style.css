@@ -14,12 +14,12 @@ body {
 }
 
 body::-webkit-scrollbar {
-  background: #80FF80;
+  background: #C3C4C4;
   width: 10px;
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #009D00;
+  background-color: #4EDDE8;
   border-radius: 15px;
 }
 
@@ -36,17 +36,17 @@ table {
 }
 
 table thead tr {
-  background: rgb(3, 121, 15);
+  background: #4EDDE8;
 }
 
 .table>thead>tr>th {
   border: solid 1px #040C04;
   font-size: 1.2em;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .table-striped>tbody>tr:nth-of-type(odd) {
-  background: rgb(88, 164, 72);
+  background: #4EDDE8;
 }
 
 .table-striped>tbody>tr:nth-of-type(odd) td img {
@@ -56,11 +56,11 @@ table thead tr {
 
 .table-striped>tbody>tr:nth-of-type(odd) td {
   font-size: 0.83em;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .table-striped>tbody>tr:nth-of-type(odd):hover {
-  background: rgb(43, 157, 20);
+  background: #4EDDE8;
 }
 
 .table-hover>tbody>tr {
@@ -77,7 +77,7 @@ table thead tr {
 }
 
 .table-hover>tbody>tr:hover {
-  background: rgb(43, 157, 20);
+  background: #4EDDE8;
 }
 
 .table-hover>tbody>tr:hover td {
@@ -148,7 +148,7 @@ table tbody tr td a i.fa-trash-alt:hover {
   display: flex;
   width: 18%;
   top: 0;
-  background: #39AA3B;
+  background: #C3C4C4;
   flex-direction: column;
   height: 100%;
 }
@@ -175,8 +175,8 @@ table tbody tr td a i.fa-trash-alt:hover {
 }
 
 .panel.panel-default .panel-heading {
-  background: #39AA3B;
-  border-bottom: solid 5px rgb(13, 121, 0);
+  background: #C3C4C4;
+  border-bottom: solid 5px #4EDDE8;
   border-radius: 0px;
 }
 
@@ -209,7 +209,7 @@ nav.navegacion_princial {
   width: 82%;
   left: 18%;
   height: 45px;
-  background: #39AA3B;
+  background: #4EDDE8;
   display: flex;
   justify-content: flex-end;
   padding: 0px 20px 0px 20px;
@@ -226,7 +226,7 @@ nav.navegacion_princial ul.menu_user {
   align-items: center;
   list-style: none;
   padding: 0px;
-  background: #287326;
+  background: #C3C4C4;
 }
 
 nav.navegacion_princial ul.menu_user>li {
@@ -279,7 +279,7 @@ nav.navegacion_princial ul.menu_user li {
 nav.navegacion_princial ul.menu_user li ul.sub-menu-user {
   list-style: none;
   position: absolute;
-  background: #287326;
+  background: #C3C4C4;
   top: 45px;
   right: 0px;
   padding: 0;
@@ -295,7 +295,7 @@ nav.navegacion_princial ul.menu_user li ul.sub-menu-user.oculto {
 }
 
 nav.navegacion_princial ul.menu_user li ul.sub-menu-user li {
-  background: #287326;
+  background: #C3C4C4;
   position: relative;
   padding: 0;
 }
@@ -322,7 +322,11 @@ nav.navegacion_princial ul.menu_user li ul.sub-menu-user li a:hover {
 
 /* LINKS PAGINACION */
 .page-item.active span {
-  background: #03790F;
+  background: #4EDDE8;
+}
+
+.page-item.active:hover span {
+  background: #4EDDE8;
 }
 
 /* boton toggle */
@@ -391,7 +395,7 @@ span.span-3 {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #287326;
+  background: #C3C4C4;
   height: 20%;
   min-height: 20%;
 }
@@ -409,15 +413,15 @@ span.span-3 {
   align-items: center;
   font-size: 1.5em;
   font-weight: bold;
-  color: rgb(255, 255, 255);
+  color: rgb(202, 202, 202);
   padding: 15px;
-  background: #287326;
-  border-top: solid 2px rgb(255, 255, 255);
+  background: #777777;
+  border-top: solid 2px #777777;
   height: 5%;
 }
 
 #menu {
-  border-top: solid 2px rgb(255, 255, 255);
+  border-top: solid 2px #777777;
   width: 100%;
   height: auto;
   transition: all 2s;
@@ -425,18 +429,18 @@ span.span-3 {
 }
 
 #menu::-webkit-scrollbar {
-  background: #80FF80;
+  background: #4EDDE8;
   width: 5px;
 }
 
 #menu::-webkit-scrollbar-thumb {
-  background-color: #009D00;
+  background-color: #C3C4C4;
   border-radius: 15px;
 }
 
 #menu ul {
   list-style: none;
-  background: #287326;
+  background: #C3C4C4;
   padding: 0;
   max-height: 100%;
   transition: all 2s;
@@ -451,19 +455,19 @@ span.span-3 {
 }
 
 #menu ul li.activado>a {
-  background: #234116;
+  background: #4EDDE8;
 }
 
 #menu ul li.activado:hover>a {
-  color: rgb(255, 255, 255);
-  background: #234116;
+  color: rgb(0, 0, 0);
+  background: #4EDDE8;
 }
 
 #menu ul li a {
   position: relative;
   display: flex;
   width: 100%;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   text-decoration: none;
   padding: 10px;
   font-size: 0.95em;
@@ -501,7 +505,7 @@ span.span-3 {
 }
 
 #menu ul li.contenedor-sub-menu.abierto {
-  background: #234116;
+  background: #4EDDE8;
 }
 
 #menu ul li.contenedor-sub-menu.abierto>a {
@@ -509,8 +513,8 @@ span.span-3 {
 }
 
 #menu ul li.contenedor-sub-menu.abierto>a:hover {
-  color: #fff;
-  background: #234116;
+  color: black;
+  background: #4EDDE8;
 }
 
 #menu ul li.contenedor-sub-menu.abierto a span.flecha {
@@ -518,7 +522,7 @@ span.span-3 {
 }
 
 #menu ul li.contenedor-sub-menu ul.sub-menu {
-  background: #287326;
+  background: #C3C4C4;
   transition: all 0.3s;
   border-bottom: solid 2px rgb(2, 83, 10);
 }
@@ -534,11 +538,11 @@ span.span-3 {
 
 #menu ul li.contenedor-sub-menu ul.sub-menu li.activado>a {
   padding-left: 25px;
-  background: rgb(13, 121, 0);
+  background: #4EDDE8;
 }
 
 #menu ul li.contenedor-sub-menu ul.sub-menu li.activado:hover>a {
-  background: rgb(13, 121, 0);
+  background: #4EDDE8;
 }
 
 @media screen and (max-width:765px) {
@@ -872,7 +876,7 @@ input.form-control[type="text" readonly=true] {
 
 .modal .modal-content #buscador_personal {
   color: rgb(0, 0, 0);
-  background: #A1C34B;
+  background: #C3C4C4;
   margin: 10px;
   border: solid 1px #040C04;
   border-radius: 10px;
@@ -880,8 +884,8 @@ input.form-control[type="text" readonly=true] {
 }
 
 .modal .modal-header {
-  background: #39AA3B;
-  border-bottom: solid 5px rgb(13, 121, 0);
+  background: #C3C4C4;
+  border-bottom: solid 5px #4EDDE8;
   border-radius: 0px;
 }
 
@@ -891,7 +895,7 @@ input.form-control[type="text" readonly=true] {
 }
 
 .modal .modal-footer {
-  background: #39AA3B;
+  background: #C3C4C4;
 }
 
 .modal .modal-body {
@@ -910,30 +914,30 @@ input.form-control[type="text" readonly=true] {
 }
 
 .modal table thead tr {
-  background: rgb(3, 121, 15);
+  background: #4EDDE8;
 }
 
 .modal .table>thead>tr>th {
   border: solid 1px #040C04;
   font-size: 1.2em;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .modal .table-striped>tbody>tr:nth-of-type(odd) {
-  background: rgb(88, 164, 72);
+  background: #4EDDE8;
 }
 
 .modal .table-striped>tbody>tr:nth-of-type(odd) td i {
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .modal .table-striped>tbody>tr:nth-of-type(odd) td {
   font-size: 0.83em;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
 }
 
 .modal .table-striped>tbody>tr:nth-of-type(odd):hover {
-  background: rgb(43, 157, 20);
+  background: #4EDDE8;
 }
 
 .modal .table-hover>tbody>tr {
@@ -949,7 +953,7 @@ input.form-control[type="text" readonly=true] {
 }
 
 .modal .table-hover>tbody>tr:hover {
-  background: rgb(43, 157, 20);
+  background: #4EDDE8;
 }
 
 .modal .table-hover>tbody>tr:hover td {
@@ -963,7 +967,7 @@ input.form-control[type="text" readonly=true] {
 /* BUSCADOR */
 #buscador {
   color: rgb(0, 0, 0);
-  background: #A1C34B;
+  background: #C3C4C4;
   margin: 10px;
   border: solid 1px #040C04;
   border-radius: 10px;
@@ -976,7 +980,8 @@ input.form-control[type="text" readonly=true] {
 }
 
 .panel.panel-default .btn.btn-success {
-  background: rgb(0, 99, 29);
+  background: #4EDDE8;
+  color: rgb(23, 0, 87);
 }
 
 a.btn.btn-warning {
