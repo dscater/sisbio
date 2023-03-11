@@ -1,0 +1,83 @@
+#modal_confirma{
+  top: -40px;
+}
+#modal_confirma .modal-dialog{
+  width: 100%;
+}
+
+#modal_confirma .modal-dialog .modal-content{
+  color:rgb(255, 255, 255);
+  background: rgb(199, 0, 57);
+}
+
+#modal_confirma .modal-dialog .modal-content .modal-body table{
+  min-width: 100%;
+  border-color:rgb(227, 227, 227);
+}
+
+#modal_confirma .modal-dialog .modal-content .modal-body table tbody tr td input{
+  color:rgb(0, 0, 0);
+  font-weight: bold;
+  width: 100%;
+}
+
+#modal_confirma .modal-dialog .modal-content .modal-body table tbody tr.fila_1{
+  background: rgb(255, 255, 255);
+  color:rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+#modal_confirma .modal-dialog .modal-content .modal-body table tbody tr.fila_2{
+  background: rgb(84, 204, 146);
+  color:rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+#modal_confirma .modal-dialog .modal-content .modal-body table tbody tr.total{
+  background: rgb(255, 245, 18);
+  color:rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+#modal_confirma .modal-dialog .modal-content .modal-body table tbody tr.total_final{
+  background: rgb(25, 147, 236);
+  color:rgb(0, 0, 0);
+  font-weight: bold;
+}
+
+#modal_confirma .modal-dialog .modal-content .modal-body table tbody tr td{
+    padding: 5px;
+    text-align: right;
+}
+
+#modal_confirma .modal-dialog .modal-content .modal-body table thead tr{
+  background: rgb(52, 134, 186);
+}
+
+.form-group.flotante{
+  top: 40px;
+  background: rgb(139, 139, 139);
+}
+
+.flotante{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 5px;
+}
+
+.flotante img{
+  width: 230px;
+  height: 180px;
+}
+
+.mensaje_error{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  font-weight: bold;
+  color:rgb(255, 255, 255);
+}

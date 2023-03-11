@@ -1,0 +1,58 @@
+
+#contenedor_tabla{
+  width: 650px;
+  margin: auto;
+}
+#contenedor_tabla h4.titulo_dato{
+  color:rgb(255, 255, 255);
+}
+
+#boton_volver{
+  display: flex;
+  width: 100%;
+  margin: auto;
+}
+
+#boton_volver a{
+  margin-top: 25px;
+}
+
+table{
+ width: 100%;
+ border:solid 2px rgb(0, 0, 0);
+}
+
+table tbody tr td{
+  font-size: 0.95em;
+  padding: 5px;
+}
+
+table tbody tr td.izquierda{
+  width: 30%;
+  text-align: right;
+}
+
+table tbody tr td.dato_izquierda{
+  width: 28%;
+  text-align: left;
+}
+
+table tbody tr td.vacio{
+  width: 5%;
+}
+
+table tbody tr td.imagen{
+  padding: 5px;
+}
+
+table tbody tr td.imagen img{
+  width: 231px;
+  height: 194px;
+}
+
+@media screen and (max-width:765px)  {
+    table tbody tr td.imagen img{
+      width: 170px;
+      height: 130px;
+    }
+}

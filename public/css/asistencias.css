@@ -1,0 +1,103 @@
+#contenedor_asistencia{
+ background: rgb(98, 175, 89);
+ width: 500px;
+ margin: auto;
+ display: flex;
+ flex-direction: column;
+ color: rgb(0, 0, 0);
+ text-align: center;
+ border:solid 3px rgb(9, 85, 2);
+ border-radius: 15px;
+}
+
+#selector{
+  font-size: 1.5em;
+  color:rgb(255, 255, 255);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background: rgb(2, 115, 17);
+  border-radius: 10px 10px 0px 0px;
+}
+
+#estado{
+  text-align: center;
+  color:rgb(0, 0, 0);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#estado input[readonly]{
+}
+
+#fecha{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#fecha input[type="date"]{
+  width: 150px;
+  margin: auto;
+}
+
+#contenedor_dia{
+  text-align: center;
+  color:rgb(0, 0, 0);
+  background: rgb(255, 247, 51);
+  position: relative;
+}
+
+#contenedor_dia span{
+  position: absolute;
+  left: 20px;
+  top: 5px;
+  font-size: 2.5em;
+  color:rgb(188, 200, 94);
+}
+
+#manania{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#contenedor_tarde{
+  text-align: center;
+  color:rgb(0, 0, 0);
+  background: rgb(0, 56, 97);
+  position: relative;
+}
+
+#contenedor_tarde span{
+  position: absolute;
+  left: 20px;
+  top: 5px;
+  font-size: 2.5em;
+  color:rgb(255, 255, 255);
+}
+
+#contenedor_tarde h2{
+  color:rgb(255, 255, 255);
+}
+
+#tarde{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color:rgb(255, 255, 255);
+}
+
+
+#estado.oculto{
+  display: none;
+}
+#contenedor_dia.oculto{
+  display: none;
+}
+#contenedor_tarde.oculto{
+  display: none;
+}

@@ -1,0 +1,107 @@
+body{
+  background: #040C04;
+  height: 100%;
+}
+
+#pagina_carga{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 999999;
+  background: #ffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container{
+  width: 500px;
+  position: relative;
+  top: 60px;
+  margin: auto;
+}
+
+.container .panel .panel-body{
+  color:rgb(255, 255, 255);
+  background:#39AA3B;
+  border:solid 3px rgb(167, 160, 160);
+}
+.container .panel .panel-heading{
+  color:rgb(255, 255, 255);
+  background:#39AA3B;
+  border-top: solid 3px rgb(167, 160, 160);
+  border-left: solid 3px rgb(167, 160, 160);
+  border-right: solid 3px rgb(167, 160, 160);
+}
+
+.container .panel .panel-heading .logo{
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.container .panel .panel-heading h2{
+  font-family:inherit;
+  text-align: center;
+  font-weight: 900;
+}
+
+.container .panel .panel-heading .logo img{
+  width: 150px;
+  height: 120px;
+  border-radius: 50%;
+  border:solid 2px rgb(255, 255, 255);
+}
+
+.grupo_input{
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+
+.grupo_input .input-group{
+  width: 80%;
+  margin: auto;
+}
+
+.invalid-feedback{
+  width: 80%;
+  margin: auto;
+}
+
+.grupo_input .input-group input{
+  font-size: 1.8em;
+  height: 50px;
+}
+
+.grupo_input .input-group span{
+    color:rgb(255, 255, 255);
+    background: rgba(17, 19, 19, 0.72);
+    font-size: 1.8em;
+    height: 50px;
+}
+
+.grupo_input label{
+  text-align: right;
+
+  margin-right: 10px;
+
+  width: 150px;
+}
+
+.boton{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.boton button{
+  font-size: 1.5em;
+  background: rgb(11, 120, 74);
+}
+
+.boton button:hover{
+  background: rgb(4, 142, 84);
+}
