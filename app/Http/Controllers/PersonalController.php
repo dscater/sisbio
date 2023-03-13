@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 use sisbio\Empresa;
 use Barryvdh\DomPDF\Facade as PDF;
-
+use Illuminate\Support\Facades\Auth;
 use sisbio\Asistencia;
 use sisbio\PagosExtra;
 use sisbio\Descuento;
@@ -17,7 +17,7 @@ use sisbio\Cargo;
 use Maatwebsite\Excel\Facades\Excel;
 
 use sisbio\Exports\PersonalExport;
-
+use sisbio\RegistroLog;
 use sisbio\tad_php_master\lib\TADFactory;
 use sisbio\tad_php_master\lib\TAD;
 use sisbio\tad_php_master\lib\TADResponse;
@@ -194,6 +194,12 @@ class PersonalController extends Controller
     $personal->foto = $nombre_foto;
 
     $personal->save();
+    RegistroLog::create([
+      "user_id" => Auth::user()->id,
+      "modulo" => "PERSONAL",
+      "accion" => "REGISTRO",
+      "descripcion" => "EL USUARIO " . Auth::user()->name . " REGISTRO UN PERSONAL",
+    ]);
 
     return redirect()->route('personals.edit', $personal->id)
       ->with('msg', '
@@ -252,6 +258,13 @@ class PersonalController extends Controller
 
       $personal->save();
     }
+    RegistroLog::create([
+      "user_id" => Auth::user()->id,
+      "modulo" => "PERSONAL",
+      "accion" => "ACTUALIZO",
+      "descripcion" => "EL USUARIO " . Auth::user()->name . " ACTUALIZO UN PERSONAL",
+    ]);
+
 
     return redirect()->route('personals.edit', $personal->id)
       ->with('msg', '
@@ -280,6 +293,12 @@ class PersonalController extends Controller
     }
 
     $personal->delete();
+    RegistroLog::create([
+      "user_id" => Auth::user()->id,
+      "modulo" => "PERSONAL",
+      "accion" => "ELIMINO",
+      "descripcion" => "EL USUARIO " . Auth::user()->name . " ELIMINO UN PERSONAL",
+    ]);
 
     return redirect()->route('personals.index')
       ->with('msg', '

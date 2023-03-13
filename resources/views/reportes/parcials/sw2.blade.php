@@ -2,7 +2,7 @@
 <table  border="1">
   <thead>
     <tr>
-      <th width="2.3%">Nro.</th>
+      <th width="1%">Nro.</th>
       <th width="2.8%">C.I.</th>
       <th width="3.5%">NOMBRE COMPLETO</th>
       <th width="1%">SEXO</th>
@@ -52,7 +52,7 @@
     <tr>
       <td>{{ $i++ }}</td>
       <td>{{$personalarea->ci}} {{$personalarea->ci_exp}}</td>
-      <td>{{$personalarea->name}} {{$personalarea->apep}} {{$personalarea->apem}}</td>
+      <td class="izquierda">{{$personalarea->name}} {{$personalarea->apep}} {{$personalarea->apem}}</td>
       <td>{{$personalarea->genero}}</td>
       @for($dia = 1 ; $dia<=30 ;$dia++)
         @if(!empty($contenedor_asistencia[$dia][$personalarea->id][0]))

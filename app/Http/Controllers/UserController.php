@@ -24,6 +24,16 @@ class UserController extends Controller
     $contraseña_antigua = $request->input('old_password');
     $contraseña_nueva = $request->input('new_password');
 
+    if ($request->hasFile("foto")) {
+      $antiguo = $user->datos_usuario->foto;
+      \File::delete(public_path() . "/imgs/" . $antiguo);
+      $file = $request->file('foto');
+      $nombre_foto = time() . $user->name . '.' . $file->getClientOriginalExtension();
+      $file->move(public_path() . '/imgs/', $nombre_foto);
+      $user->datos_usuario->foto = $nombre_foto;
+      $user->datos_usuario->save();
+    }
+
     if ($contraseña_antigua != "" || $contraseña_antigua != null) {
       if ($contraseña_nueva != "" || $contraseña_nueva != null) {
         if (Hash::check($contraseña_antigua, $user->password)) {

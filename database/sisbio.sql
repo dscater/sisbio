@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 11-03-2023 a las 03:31:43
+-- Tiempo de generación: 13-03-2023 a las 15:55:27
 -- Versión del servidor: 5.7.33
 -- Versión de PHP: 7.4.19
 
@@ -41,6 +41,23 @@ CREATE TABLE `asistencias` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `asistencias`
+--
+
+INSERT INTO `asistencias` (`id`, `personals_id`, `fecha`, `ingreso_maniana`, `salida_maniana`, `ingreso_tarde`, `salida_tarde`, `estado`, `observacion`, `created_at`, `updated_at`) VALUES
+(1, 18, '2023-03-11', '09:54:00', '09:54:00', NULL, NULL, 'ASISTIÓ', NULL, '2023-03-11 13:54:28', '2023-03-11 13:54:28'),
+(2, 18, '2023-03-13', '10:13:00', '10:13:00', NULL, NULL, 'ASISTIÓ', NULL, '2023-03-13 14:13:21', '2023-03-13 14:13:21'),
+(3, 7, '2023-03-13', '10:17:00', '10:17:00', NULL, NULL, 'ASISTIÓ', NULL, '2023-03-13 14:17:22', '2023-03-13 14:17:22'),
+(4, 14, '2023-03-13', '10:18:00', '10:18:00', NULL, NULL, 'ASISTIÓ', NULL, '2023-03-13 14:18:24', '2023-03-13 14:18:24'),
+(5, 13, '2023-03-13', '10:25:00', '10:25:00', NULL, NULL, 'ASISTIÓ', NULL, '2023-03-13 14:25:47', '2023-03-13 14:25:47'),
+(6, 21, '2023-03-13', '10:27:00', '10:27:00', NULL, NULL, 'ASISTIÓ', NULL, '2023-03-13 14:27:20', '2023-03-13 14:27:20'),
+(7, 17, '2023-03-13', '10:28:00', '10:28:00', NULL, NULL, 'ASISTIÓ', NULL, '2023-03-13 14:28:20', '2023-03-13 14:28:20'),
+(8, 8, '2023-03-13', '10:29:00', '10:29:00', NULL, NULL, 'ASISTIÓ', NULL, '2023-03-13 14:29:05', '2023-03-13 14:29:05'),
+(9, 22, '2023-03-13', '10:32:00', '10:32:00', NULL, NULL, 'ASISTIÓ', NULL, '2023-03-13 14:32:51', '2023-03-13 14:32:51'),
+(10, 20, '2023-03-13', '11:11:00', '11:11:00', NULL, NULL, 'ASISTIÓ', NULL, '2023-03-13 15:11:31', '2023-03-13 15:11:31'),
+(11, 9, '2023-03-13', '11:14:00', '11:14:00', NULL, NULL, 'ASISTIÓ', NULL, '2023-03-13 15:14:18', '2023-03-13 15:14:18');
+
 -- --------------------------------------------------------
 
 --
@@ -68,7 +85,8 @@ INSERT INTO `cargos` (`id`, `name`, `description`, `created_at`, `updated_at`) V
 (9, 'ABOGADA', '', '2023-02-15 03:01:23', '2023-02-15 03:01:23'),
 (10, 'GENERO', '', '2023-02-15 03:01:46', '2023-02-15 03:01:46'),
 (11, 'SECRETARIA', '', '2023-02-15 03:02:09', '2023-02-15 03:02:09'),
-(12, 'CONTROL SOCIAL', '', '2023-02-15 03:02:38', '2023-02-15 03:02:38');
+(12, 'CONTROL SOCIAL', '', '2023-02-15 03:02:38', '2023-02-15 03:02:38'),
+(14, 'CARGO DE PRUEBA', 'DESC', '2023-03-13 15:38:36', '2023-03-13 15:38:36');
 
 -- --------------------------------------------------------
 
@@ -140,7 +158,9 @@ CREATE TABLE `datos_usuarios` (
 
 INSERT INTO `datos_usuarios` (`id`, `name`, `apep`, `apem`, `ci`, `ci_exp`, `dir`, `email`, `fono`, `cel`, `foto`, `cargos_id`, `users_id`, `created_at`, `updated_at`) VALUES
 (3, 'MARIO', 'ALCAZAR', 'BARRERA', '123456', 'LP', 'ZONA NORTE', '', '2665678', '78644571', '1553022625M1234562.png', 5, 5, '2023-02-19 19:10:25', '2023-02-19 19:10:25'),
-(5, 'RAMIRO', 'CONDE', 'APAZA', '6988532', 'LP', 'ZONA CENTRAL', '', '2887676', '7675544', '1553024083R69885321.png', 5, 7, '2023-02-19 19:29:09', '2023-02-19 19:34:43');
+(5, 'RAMIRO', 'CONDE', 'APAZA', '6988532', 'LP', 'ZONA CENTRAL', '', '2887676', '7675544', '1678720919R69885321.jpg', 5, 7, '2023-02-19 19:29:09', '2023-03-13 15:21:59'),
+(6, 'PABLO', 'ALBES', 'MARTINEZ', '1122', 'CB', 'LOS OLIVOS', 'PABLO@GMAIL.COM', '22222', '777777', '1678721134P11221.png', 4, 8, '2023-03-13 15:25:34', '2023-03-13 15:25:34'),
+(7, 'EDUARDO', 'CACERES', '', '1133', 'LP', 'LOS OLIVOS', '', '22222', '777777', '1678721204E11332.png', 4, 9, '2023-03-13 15:26:44', '2023-03-13 15:26:44');
 
 -- --------------------------------------------------------
 
@@ -323,6 +343,122 @@ CREATE TABLE `migrations` (
   `batch` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Volcado de datos para la tabla `migrations`
+--
+
+INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
+(1, '2023_03_11_113558_create_notificacions_table', 1),
+(2, '2023_03_11_113701_create_notificacion_users_table', 2),
+(3, '2023_03_11_113719_create_registro_logs_table', 3);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `notificacions`
+--
+
+CREATE TABLE `notificacions` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `asistencia_id` bigint(20) UNSIGNED NOT NULL,
+  `detalle` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `fecha` date NOT NULL,
+  `hora` time NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `notificacions`
+--
+
+INSERT INTO `notificacions` (`id`, `asistencia_id`, `detalle`, `fecha`, `hora`, `created_at`, `updated_at`) VALUES
+(1, 1, 'INGRESO DE ANDRES CAMPOS BATALLA', '2023-03-11', '11:55:00', '2023-03-11 15:55:02', '2023-03-11 15:55:02'),
+(2, 2, 'INGRESO DE ANDRES CAMPOS BATALLA', '2023-03-13', '10:14:00', '2023-03-13 14:14:53', '2023-03-13 14:14:53'),
+(3, 3, 'INGRESO DE ABRAHAM CAPIONA SALAZAR', '2023-03-13', '10:17:00', '2023-03-13 14:17:23', '2023-03-13 14:17:23'),
+(4, 4, 'INGRESO DE ELENA CINCO PAZ', '2023-03-13', '10:18:00', '2023-03-13 14:18:24', '2023-03-13 14:18:24'),
+(5, 5, 'INGRESO DE PENELOPE CRUZ ORTIZ', '2023-03-13', '10:25:00', '2023-03-13 14:25:47', '2023-03-13 14:25:47'),
+(6, 6, 'INGRESO DE MARIA FLORES DOMINGUEZ', '2023-03-13', '10:27:00', '2023-03-13 14:27:21', '2023-03-13 14:27:21'),
+(7, 7, 'INGRESO DE JORGE GUTIERREZ ZAPATA', '2023-03-13', '10:28:00', '2023-03-13 14:28:20', '2023-03-13 14:28:20'),
+(8, 8, 'INGRESO DE MARTINA HUANCA ALANOCA', '2023-03-13', '10:29:00', '2023-03-13 14:29:06', '2023-03-13 14:29:06'),
+(9, 9, 'INGRESO DE FLORA LOPEZ MACHICADO', '2023-03-13', '10:32:00', '2023-03-13 14:32:52', '2023-03-13 14:32:52'),
+(10, 10, 'INGRESO DE ARNOLD MAMANI MAMANI', '2023-03-13', '11:11:00', '2023-03-13 15:11:31', '2023-03-13 15:11:31'),
+(11, 11, 'INGRESO DE JESUSA MARIACA DOMINGUEZ', '2023-03-13', '11:14:00', '2023-03-13 15:14:19', '2023-03-13 15:14:19');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `notificacion_users`
+--
+
+CREATE TABLE `notificacion_users` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `notificacion_id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `visto` int(11) NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `notificacion_users`
+--
+
+INSERT INTO `notificacion_users` (`id`, `notificacion_id`, `user_id`, `visto`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 1, '2023-03-11 15:55:02', '2023-03-13 15:54:57'),
+(2, 2, 1, 1, '2023-03-13 14:14:53', '2023-03-13 15:54:57'),
+(3, 3, 1, 1, '2023-03-13 14:17:23', '2023-03-13 15:54:57'),
+(4, 4, 1, 1, '2023-03-13 14:18:24', '2023-03-13 15:54:57'),
+(5, 5, 1, 1, '2023-03-13 14:25:47', '2023-03-13 15:54:57'),
+(6, 6, 1, 1, '2023-03-13 14:27:21', '2023-03-13 15:54:57'),
+(7, 7, 1, 1, '2023-03-13 14:28:20', '2023-03-13 15:54:57'),
+(8, 8, 1, 1, '2023-03-13 14:29:06', '2023-03-13 15:54:57'),
+(9, 9, 1, 1, '2023-03-13 14:32:52', '2023-03-13 15:54:57'),
+(10, 1, 7, 1, '2023-03-13 14:58:21', '2023-03-13 15:14:28'),
+(11, 2, 7, 1, '2023-03-13 14:58:21', '2023-03-13 15:14:28'),
+(12, 3, 7, 1, '2023-03-13 14:58:21', '2023-03-13 15:14:28'),
+(13, 4, 7, 1, '2023-03-13 14:58:21', '2023-03-13 15:14:28'),
+(14, 5, 7, 1, '2023-03-13 14:58:21', '2023-03-13 15:14:28'),
+(15, 6, 7, 1, '2023-03-13 14:58:21', '2023-03-13 15:14:28'),
+(16, 7, 7, 1, '2023-03-13 14:58:21', '2023-03-13 15:14:28'),
+(17, 8, 7, 1, '2023-03-13 14:58:21', '2023-03-13 15:14:28'),
+(18, 9, 7, 1, '2023-03-13 14:58:21', '2023-03-13 15:14:28'),
+(19, 1, 5, 1, '2023-03-13 14:59:08', '2023-03-13 15:11:12'),
+(20, 2, 5, 1, '2023-03-13 14:59:08', '2023-03-13 15:11:12'),
+(21, 3, 5, 1, '2023-03-13 14:59:08', '2023-03-13 15:11:12'),
+(22, 4, 5, 1, '2023-03-13 14:59:08', '2023-03-13 15:11:12'),
+(23, 5, 5, 1, '2023-03-13 14:59:08', '2023-03-13 15:11:12'),
+(24, 6, 5, 1, '2023-03-13 14:59:08', '2023-03-13 15:11:12'),
+(25, 7, 5, 1, '2023-03-13 14:59:08', '2023-03-13 15:11:12'),
+(26, 8, 5, 1, '2023-03-13 14:59:08', '2023-03-13 15:11:12'),
+(27, 9, 5, 1, '2023-03-13 14:59:08', '2023-03-13 15:11:12'),
+(28, 10, 1, 1, '2023-03-13 15:11:31', '2023-03-13 15:54:57'),
+(29, 10, 7, 1, '2023-03-13 15:14:00', '2023-03-13 15:14:28'),
+(30, 11, 1, 1, '2023-03-13 15:14:19', '2023-03-13 15:54:57'),
+(31, 11, 7, 1, '2023-03-13 15:14:19', '2023-03-13 15:14:28'),
+(32, 1, 8, 1, '2023-03-13 15:25:48', '2023-03-13 15:48:20'),
+(33, 2, 8, 1, '2023-03-13 15:25:48', '2023-03-13 15:48:20'),
+(34, 3, 8, 1, '2023-03-13 15:25:48', '2023-03-13 15:48:20'),
+(35, 4, 8, 1, '2023-03-13 15:25:48', '2023-03-13 15:48:20'),
+(36, 5, 8, 1, '2023-03-13 15:25:48', '2023-03-13 15:48:20'),
+(37, 6, 8, 1, '2023-03-13 15:25:48', '2023-03-13 15:48:20'),
+(38, 7, 8, 1, '2023-03-13 15:25:48', '2023-03-13 15:48:20'),
+(39, 8, 8, 1, '2023-03-13 15:25:48', '2023-03-13 15:48:20'),
+(40, 9, 8, 1, '2023-03-13 15:25:48', '2023-03-13 15:48:20'),
+(41, 10, 8, 1, '2023-03-13 15:25:48', '2023-03-13 15:48:20'),
+(42, 11, 8, 1, '2023-03-13 15:25:48', '2023-03-13 15:48:20'),
+(43, 1, 9, 1, '2023-03-13 15:29:14', '2023-03-13 15:30:51'),
+(44, 2, 9, 1, '2023-03-13 15:29:14', '2023-03-13 15:30:51'),
+(45, 3, 9, 1, '2023-03-13 15:29:14', '2023-03-13 15:30:51'),
+(46, 4, 9, 1, '2023-03-13 15:29:14', '2023-03-13 15:30:51'),
+(47, 5, 9, 1, '2023-03-13 15:29:14', '2023-03-13 15:30:51'),
+(48, 6, 9, 1, '2023-03-13 15:29:14', '2023-03-13 15:30:51'),
+(49, 7, 9, 1, '2023-03-13 15:29:14', '2023-03-13 15:30:51'),
+(50, 8, 9, 1, '2023-03-13 15:29:14', '2023-03-13 15:30:51'),
+(51, 9, 9, 1, '2023-03-13 15:29:15', '2023-03-13 15:30:51'),
+(52, 10, 9, 1, '2023-03-13 15:29:15', '2023-03-13 15:30:51'),
+(53, 11, 9, 1, '2023-03-13 15:29:15', '2023-03-13 15:30:51');
+
 -- --------------------------------------------------------
 
 --
@@ -339,6 +475,13 @@ CREATE TABLE `pagos` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `pagos`
+--
+
+INSERT INTO `pagos` (`id`, `personals_id`, `mes`, `anio`, `dias_trabajado`, `monto_total`, `created_at`, `updated_at`) VALUES
+(1, 18, '03', '2023', '30', '3666.18', '2023-03-11 14:33:34', '2023-03-11 14:33:34');
 
 -- --------------------------------------------------------
 
@@ -580,6 +723,33 @@ INSERT INTO `personals` (`id`, `ci`, `ci_exp`, `name`, `apep`, `apem`, `fech_nac
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `registro_logs`
+--
+
+CREATE TABLE `registro_logs` (
+  `id` bigint(20) UNSIGNED NOT NULL,
+  `user_id` bigint(20) UNSIGNED NOT NULL,
+  `modulo` varchar(155) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `accion` varchar(155) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `descripcion` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Volcado de datos para la tabla `registro_logs`
+--
+
+INSERT INTO `registro_logs` (`id`, `user_id`, `modulo`, `accion`, `descripcion`, `created_at`, `updated_at`) VALUES
+(1, 8, 'CARGOS', 'REGISTRO', 'EL USUARIO P11221 REGISTRO UN CARGO', '2023-03-13 15:38:36', '2023-03-13 15:38:36'),
+(2, 8, 'CARGOS', 'ACTUALIZO', 'EL USUARIO P11221 ACTUALIZO UN CARGO', '2023-03-13 15:38:41', '2023-03-13 15:38:41'),
+(3, 8, 'UNIDAD/ÁREAS', 'REGISTRO', 'EL USUARIO P11221 REGISTRO UNA UNIDAD/ÁREA', '2023-03-13 15:47:14', '2023-03-13 15:47:14'),
+(4, 8, 'UNIDAD/ÁREAS', 'ACTUALIZO', 'EL USUARIO P11221 ACTUALIZO UNA UNIDAD/ÁREA', '2023-03-13 15:47:19', '2023-03-13 15:47:19'),
+(5, 8, 'UNIDAD/ÁREAS', 'ELIMINO', 'EL USUARIO P11221 ELIMINO UNA UNIDAD/ÁREA', '2023-03-13 15:47:31', '2023-03-13 15:47:31');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `roles`
 --
 
@@ -622,7 +792,9 @@ CREATE TABLE `role_user` (
 INSERT INTO `role_user` (`id`, `role_id`, `user_id`, `created_at`, `updated_at`) VALUES
 (1, 1, 1, '2023-01-17 23:45:53', '2023-01-17 23:45:53'),
 (5, 2, 5, '2023-01-19 19:10:25', '2023-01-19 19:10:25'),
-(7, 1, 7, '2023-01-19 19:29:09', '2023-01-19 19:29:09');
+(7, 1, 7, '2023-01-19 19:29:09', '2023-01-19 19:29:09'),
+(8, 1, 8, '2023-03-13 15:25:33', '2023-03-13 15:25:33'),
+(9, 2, 9, '2023-03-13 15:26:44', '2023-03-13 15:26:44');
 
 -- --------------------------------------------------------
 
@@ -695,9 +867,11 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'admin', '$2y$10$OXgT3p.Hi1vXx/avLnB9K.I9yeTos1pFCoRpwM7AgG.nl.ECglYVG', 'N5WtlAXWJLyxJxyYQ3ORGcol4dIjHUjEpShZ7dpDsa30aiMtiUDFv9fTpF9n', '2023-01-11 10:28:35', '2023-01-11 10:28:35'),
-(5, 'M1234562', '$2y$10$jDMa6Kfe8vgHMlmBK5QPyuhxLph2cNnwnQWpWu93PDgnflUwmdApO', 'CG6qhvykiTcqEYz15sm4IbpDN0ai0T1heJGxZZWL9AhZK49hBwJshKM3OuXK', '2023-01-11 10:28:35', '2023-01-11 10:28:35'),
-(7, 'R69885321', '$2y$10$ds7V8JePJxip8ND8MCmj5uq9Yq2cBzBqG46jpl0E3Vmx0ciBwtXj2', '7pKeyepfPNOLH8oLeFFfoV1xVR82SBfYjH3ZzhS3LehthfdA6JOJdVv7U8sp', '2023-01-11 10:28:35', '2023-01-11 10:28:35');
+(1, 'admin', '$2y$10$OXgT3p.Hi1vXx/avLnB9K.I9yeTos1pFCoRpwM7AgG.nl.ECglYVG', 'ZX5RlUbMfA0hJmvADdHdg6SSFf6FwT6Ui9sftnV1Mw9gyenxfJMo6Kl2RH2o', '2023-01-11 10:28:35', '2023-01-11 10:28:35'),
+(5, 'M1234562', '$2y$10$jDMa6Kfe8vgHMlmBK5QPyuhxLph2cNnwnQWpWu93PDgnflUwmdApO', '2j2IqXFmb0L8Os1kFSKRCzAF7Lzw6c54YaledTulss05qYgHAsYUzbS8TLYY', '2023-01-11 10:28:35', '2023-01-11 10:28:35'),
+(7, 'R69885321', '$2y$10$ds7V8JePJxip8ND8MCmj5uq9Yq2cBzBqG46jpl0E3Vmx0ciBwtXj2', 'CGRiSsRAc6xyEaRGQ1EkA2YTIEUQmsfFKEA8BGRcKSBxDY91Cla6nwlWSIEU', '2023-01-11 10:28:35', '2023-01-11 10:28:35'),
+(8, 'P11221', '$2y$10$6woDJ6eZ3CtAYPij3fr5vuvUXk39lXCYHJKu/dkza0BaiGcOqfOmW', NULL, '2023-03-13 15:25:33', '2023-03-13 15:25:33'),
+(9, 'E11332', '$2y$10$5.wRGD5x37Q3TLdYKbIZB.zW0wq1NHmXs59H/XgYMk/SDPGrq9mCO', NULL, '2023-03-13 15:26:44', '2023-03-13 15:26:44');
 
 --
 -- Índices para tablas volcadas
@@ -781,6 +955,18 @@ ALTER TABLE `migrations`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `notificacions`
+--
+ALTER TABLE `notificacions`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `notificacion_users`
+--
+ALTER TABLE `notificacion_users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `pagos`
 --
 ALTER TABLE `pagos`
@@ -830,6 +1016,12 @@ ALTER TABLE `personals`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `registro_logs`
+--
+ALTER TABLE `registro_logs`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `roles`
 --
 ALTER TABLE `roles`
@@ -871,13 +1063,13 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT de la tabla `asistencias`
 --
 ALTER TABLE `asistencias`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `cargos`
 --
 ALTER TABLE `cargos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT de la tabla `contratos`
@@ -889,7 +1081,7 @@ ALTER TABLE `contratos`
 -- AUTO_INCREMENT de la tabla `datos_usuarios`
 --
 ALTER TABLE `datos_usuarios`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT de la tabla `descuentos`
@@ -931,13 +1123,25 @@ ALTER TABLE `horarios`
 -- AUTO_INCREMENT de la tabla `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `notificacions`
+--
+ALTER TABLE `notificacions`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT de la tabla `notificacion_users`
+--
+ALTER TABLE `notificacion_users`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT de la tabla `pagos`
 --
 ALTER TABLE `pagos`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `pagos_extras`
@@ -970,6 +1174,12 @@ ALTER TABLE `personals`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 
 --
+-- AUTO_INCREMENT de la tabla `registro_logs`
+--
+ALTER TABLE `registro_logs`
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
 -- AUTO_INCREMENT de la tabla `roles`
 --
 ALTER TABLE `roles`
@@ -979,7 +1189,7 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `role_user`
 --
 ALTER TABLE `role_user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `tasas`
@@ -991,13 +1201,13 @@ ALTER TABLE `tasas`
 -- AUTO_INCREMENT de la tabla `unidad_areas`
 --
 ALTER TABLE `unidad_areas`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restricciones para tablas volcadas

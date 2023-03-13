@@ -35,4 +35,8 @@ class User extends Authenticatable
     {
         return $this->hasOne('sisbio\DatosUsuario', 'users_id', 'id');
     }
+    public function notificacion_users()
+    {
+        return $this->hasMany(NotificacionUser::class, 'user_id');
+    }
 }

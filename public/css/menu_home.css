@@ -1,43 +1,45 @@
-#menu_home{
+#menu_home {
   margin: auto;
-  background: rgb(25, 113, 3);
+  background: #4EDDE8;
 }
 
-#menu_home ul.lista-menu{
+#menu_home ul.lista-menu {
   padding: 10px 10px 10px 10px;
   list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
 
-#menu_home ul.lista-menu > li{
+#menu_home ul.lista-menu>li {
   margin: 5px;
-  border:solid 2px rgb(255, 255, 255);
+  border: solid 2px rgb(255, 255, 255);
   display: inline-flex;
-  width: 47%;
   height: 140px;
   transition: 0.5s;
   padding: 0;
 }
 
-#menu_home ul.lista-menu > li:hover{
+#menu_home ul.lista-menu>li:hover {
   transform: scale(0.93);
 }
 
-#menu_home ul.lista-menu > li.verde{
+#menu_home ul.lista-menu>li.verde {
   background: rgb(58, 182, 58);
 }
 
-#menu_home ul.lista-menu > li.celeste{
-  background: rgb(0, 237, 216);
+#menu_home ul.lista-menu>li.celeste {
+  background: rgb(0, 124, 114);
 }
 
-#menu_home ul.lista-menu > li.azul{
+#menu_home ul.lista-menu>li.azul {
   background: rgb(10, 101, 140);
 }
 
-#menu_home ul.lista-menu > li > a{
+#menu_home ul.lista-menu>li>a {
   padding-top: 25px;
   text-decoration: none;
-  color:rgb(255, 255, 255);font-size: 1.8em;
+  color: rgb(255, 255, 255);
+  font-size: 1.8em;
   display: flex;
   flex-direction: column;
   height: 100%;
@@ -46,107 +48,108 @@
   font-size: 1.5em;
 }
 
-#menu_home ul.lista-menu > li > a span{
+#menu_home ul.lista-menu>li>a span {}
 
-}
-
-#menu_home ul.lista-menu > li.contenedor-sub-menu{
+#menu_home ul.lista-menu>li.contenedor-sub-menu {
   position: relative;
 }
 
-#menu_home ul.lista-menu > li.contenedor-sub-menu ul.sub-menu.celeste{
+#menu_home ul.lista-menu>li.contenedor-sub-menu ul.sub-menu.celeste {
   padding: 0;
   list-style: none;
   top: 135px;
   width: 100%;
   position: absolute;
   background: rgb(0, 237, 216);
-  border:solid 2px rgb(255, 255, 255);
+  border: solid 2px rgb(255, 255, 255);
 }
 
-#menu_home ul.lista-menu > li.contenedor-sub-menu ul.sub-menu>li{
+#menu_home ul.lista-menu>li.contenedor-sub-menu ul.sub-menu>li {
   padding: 0;
 }
 
-#menu_home ul.lista-menu > li.contenedor-sub-menu ul.sub-menu>li>a{
+#menu_home ul.lista-menu>li.contenedor-sub-menu ul.sub-menu>li>a {
   font-size: 1.2em;
   padding: 8px;
   width: 100%;
   display: flex;
   text-align: justify;
   text-decoration: none;
-  color:rgb(255, 255, 255);
+  color: rgb(255, 255, 255);
   text-align: left;
 }
 
-#menu_home ul.lista-menu > li.contenedor-sub-menu ul.sub-menu>li>a:hover{
+#menu_home ul.lista-menu>li.contenedor-sub-menu ul.sub-menu>li>a:hover {
   background: rgb(27, 175, 162);
 }
 
-#menu_home ul.lista-menu > li.contenedor-sub-menu ul.sub-menu>li>a span{
+#menu_home ul.lista-menu>li.contenedor-sub-menu ul.sub-menu>li>a span {
   margin-right: 5px;
 }
 
-#menu_home ul.lista-menu > li.contenedor-sub-menu ul.sub-menu.oculto{
+#menu_home ul.lista-menu>li.contenedor-sub-menu ul.sub-menu.oculto {
   display: none;
 }
 
-#menu_home ul li.contenedor-sub-menu.abierto{
+#menu_home ul li.contenedor-sub-menu.abierto {
   background: rgb(27, 195, 190);
+  z-index: 200;
 }
 
-#menu_home ul li.contenedor-sub-menu.abierto > a{
+#menu_home ul li.contenedor-sub-menu.abierto>a {
   border-bottom: solid 2px rgb(255, 255, 255);
 }
 
-#menu_home ul li.contenedor-sub-menu.abierto a span{
+#menu_home ul li.contenedor-sub-menu.abierto a span {
   transition: 0.5s;
 }
 
-#menu_home ul li.contenedor-sub-menu.abierto a span.flecha{
+#menu_home ul li.contenedor-sub-menu.abierto a span.flecha {
   transform: rotateX(180deg);
 }
-#menu_home ul li.contenedor-sub-menu ul.sub-menu li.activado > a{
+
+#menu_home ul li.contenedor-sub-menu ul.sub-menu li.activado>a {
   padding-left: 25px;
   background: rgb(122, 2, 37);
 }
 
-#menu_home ul li.contenedor-sub-menu ul.sub-menu li.activado:hover > a{
-  background: rgb(2, 122, 18)
+#menu_home ul li.contenedor-sub-menu ul.sub-menu li.activado:hover>a {
+  background: #4EDDE8;
 }
 
-@media screen and (max-width:765px){
-  #menu_home ul.lista-menu{
+@media screen and (max-width:765px) {
+  #menu_home ul.lista-menu {
     padding: 10px 10px 10px 10px;
   }
-  #menu_home ul.lista-menu > li{
+
+  #menu_home ul.lista-menu>li {
     width: 47.9%;
     height: 165px;
   }
 
-  #menu_home ul.lista-menu li a{
+  #menu_home ul.lista-menu li a {
     font-size: 0.8em;
     text-align: center;
   }
 }
 
-@media screen and (max-width:670px){
-  #menu_home ul.lista-menu > li{
+@media screen and (max-width:670px) {
+  #menu_home ul.lista-menu>li {
     width: 97%;
     height: 165px;
   }
 
-  #menu_home ul.lista-menu li a{
+  #menu_home ul.lista-menu li a {
     font-size: 2.2em;
   }
 }
 
 
 /* ASISTENCIA */
-h2{
+h2 {
   text-align: center;
   background: rgb(242, 245, 119);
-  color:rgb(33, 31, 31);
+  color: rgb(33, 31, 31);
   font-weight: 800;
 
   padding: 5px;
@@ -154,46 +157,50 @@ h2{
   box-shadow: 0px 0px 20px rgb(52, 47, 47);
 }
 
-table{
-  border-color:rgb(183, 186, 43)!important;
+table {
+  border-color: rgb(183, 186, 43) !important;
 }
 
-table tbody tr td img{
+table tbody tr td {
+  background:#4EDDE8;
+}
+
+table tbody tr td img {
   width: 100%;
 }
 
-table tbody tr td.area{
-  background: rgb(84, 184, 53);
-  color: rgb(34, 33, 33)!important;
+table tbody tr td.area {
+  background: rgb(214, 249, 252);
+  color: rgb(34, 33, 33) !important;
   font-weight: 900;
   font-size: 1.2em;
 }
 
-table tbody tr td.personal{
+table tbody tr td.personal {
   background: rgb(242, 245, 119);
-  color: rgb(33, 31, 31)!important;
+  color: rgb(33, 31, 31) !important;
 }
 
-table tbody tr td.columna_maniana{
+table tbody tr td.columna_maniana {
   font-size: 0.8em;
   background: rgb(234, 238, 64);
-  color:rgb(0, 0, 0)!important;
+  color: rgb(0, 0, 0) !important;
 }
 
-table tbody tr td.columna_tarde{
+table tbody tr td.columna_tarde {
   font-size: 0.8em;
-  background: rgb(55, 90, 158)!important;
-  color:rgb(255, 255, 255)!important;
+  background: rgb(55, 90, 158) !important;
+  color: rgb(255, 255, 255) !important;
 }
 
-table tbody tr td.contenido_maniana{
+table tbody tr td.contenido_maniana {
   font-size: 0.8em;
   background: rgb(236, 238, 148);
-  color:rgb(0, 0, 0)!important;
+  color: rgb(0, 0, 0) !important;
 }
 
-table tbody tr td.contenido_tarde{
+table tbody tr td.contenido_tarde {
   font-size: 0.8em;
   background: rgb(81, 115, 181);
-  color:rgb(255, 255, 255)!important;
+  color: rgb(255, 255, 255) !important;
 }

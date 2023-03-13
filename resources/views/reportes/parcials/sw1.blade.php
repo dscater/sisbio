@@ -61,7 +61,7 @@
           <tr>
             <td>{{ $i++ }}</td>
             <td>{{$personalarea->ci}} {{$personalarea->ci_exp}}</td>
-            <td>{{$personalarea->name}} {{$personalarea->apep}} {{$personalarea->apem}}</td>
+            <td class="izquierda">{{$personalarea->name}} {{$personalarea->apep}} {{$personalarea->apem}}</td>
             <td>{{$personalarea->genero}}</td>
             @for($dia = 1 ; $dia<=30 ;$dia++)
               @if(!empty($contenedor_asistencia[$area->id][$anio][$mes][$dia][$personalarea->id][0]))

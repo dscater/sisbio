@@ -8,8 +8,9 @@ use Illuminate\Http\Request;
 use sisbio\Personal;
 use sisbio\Empresa;
 use Barryvdh\DomPDF\Facade as PDF;
-
+use Illuminate\Support\Facades\Auth;
 use PHPExcel_IOFactory;
+use sisbio\RegistroLog;
 
 class AsistenciaController extends Controller
 {
@@ -68,16 +69,25 @@ class AsistenciaController extends Controller
 				if ($request->input('ingreso_tarde') != "" && $request->input('salida_tarde') != "") {
 					$asistencia = new Asistencia(array_map('mb_strtoupper', $request->except('ingreso_maniana', 'salida_maniana')));
 				} else {
-					return redirect()->route('asistencias.create', $id)->with('msg', '
-                     <div class="alert alert-info">
-                     <button class="close" data-dismiss="alert">&times;</button>
-                     <strong>Debes completar los campos Ingreso y salida.</strong>
-                     </div>
-                     ');
+					return redirect()->route('asistencias.create', $id)->with(
+						'msg',
+						'<div class="alert alert-info">
+							<button class="close" data-dismiss="alert">&times;</button>
+							<strong>Debes completar los campos Ingreso y salida.</strong>
+						</div>
+						'
+					);
 				}
 			}
-
 			$personal->asistencias()->save($asistencia);
+
+			RegistroLog::create([
+				"user_id" => Auth::user()->id,
+				"modulo" => "ASISTENCIAS",
+				"accion" => "REGISTRO",
+				"descripcion" => "EL USUARIO " . Auth::user()->name . " REGISTRO UNA ASISTENCIA",
+			]);
+
 			return redirect()->route('asistencias.edit', $asistencia->id)->with('msg', '
             <div class="alert alert-success">
             <button class="close" data-dismiss="alert">&times;</button>
@@ -148,6 +158,13 @@ class AsistenciaController extends Controller
 		$id = $asistencia->personals_id;
 
 		$asistencia->delete();
+
+		RegistroLog::create([
+			"user_id" => Auth::user()->id,
+			"modulo" => "ASISTENCIAS",
+			"accion" => "ELIMINO",
+			"descripcion" => "EL USUARIO " . Auth::user()->name . " ELIMINO UNA ASISTENCIA",
+		]);
 
 		return redirect()->route('asistencias.index', $id)->with('msg', '
             <div class="alert alert-success">

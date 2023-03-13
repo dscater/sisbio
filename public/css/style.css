@@ -2,6 +2,10 @@ body {
   background: #040C04;
 }
 
+.oculto {
+  display: none;
+}
+
 #pagina_carga {
   position: fixed;
   width: 100%;
@@ -231,7 +235,6 @@ nav.navegacion_princial ul.menu_user {
 
 nav.navegacion_princial ul.menu_user>li {
   padding: 0;
-  width: 100%;
   height: 100%;
 }
 
@@ -242,8 +245,9 @@ nav.navegacion_princial ul.menu_user>li>a {
   width: 100%;
   height: 100%;
   text-decoration: none;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   padding: 0px 25px 0px 0px;
+  padding-left: 10px;
   font-size: 1.1em;
 }
 
@@ -290,6 +294,17 @@ nav.navegacion_princial ul.menu_user li ul.sub-menu-user {
   transition: 0.8s;
 }
 
+nav.navegacion_princial ul.menu_user.notificaciones li:first-child {
+  position: relative;
+}
+
+nav.navegacion_princial ul.menu_user.notificaciones li ul.sub-menu-user {
+  width: 200px;
+  font-size: 0.9em;
+  max-height: 50vh;
+  overflow: auto;
+}
+
 nav.navegacion_princial ul.menu_user li ul.sub-menu-user.oculto {
   transform: rotateY(180deg);
 }
@@ -302,7 +317,7 @@ nav.navegacion_princial ul.menu_user li ul.sub-menu-user li {
 
 nav.navegacion_princial ul.menu_user li ul.sub-menu-user li a {
   display: flex;
-  color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
   width: 100%;
   text-decoration: none;
   padding: 10px 10px 10px 5px;
@@ -770,7 +785,7 @@ input.form-control[type="text" readonly=true] {
 .panel.panel-default.menu {
   float: left;
   margin-right: 45px;
-  width: 45%;
+  width: 90%;
 }
 
 .panel.panel-default.tabla .panel-body {
@@ -1021,4 +1036,19 @@ a.btn.btn-warning:hover {
 .alert.alert2 {
   margin: 0px;
   margin-top: 5px;
+}
+
+/* NOTIFICACIONES */
+.notificacion>span:first-child {
+  position: relative;
+}
+
+.notificacion span.badge {
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  font-size: 0.5em;
+  border-radius: 50%;
+  padding: 4px;
+  background: red;
 }

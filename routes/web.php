@@ -428,7 +428,7 @@ Route::middleware(['auth'])->group(function () {
         ->name('pagos.destroy')
         ->middleware('permission:pagos.destroy');
 
-    // ASISTENCIAS
+    // ASISTENCIAS POR PERSONAL
     Route::GET('personals/asistencias/{id}', 'AsistenciaController@index')
         ->name('asistencias.index')
         ->middleware('permission:asistencias.index');
@@ -497,6 +497,18 @@ Route::middleware(['auth'])->group(function () {
     Route::DELETE('horarios/destroy/{horario}', 'HorarioController@destroy')
         ->name('horarios.destroy')
         ->middleware('permission:horarios.destroy');
+
+    // NOTIFICACIONES
+    Route::GET('notificacions', 'NotificacionController@index')
+        ->name('notificacions.index');
+    Route::GET('notificacions/show/{notificacion}', 'NotificacionController@show')
+        ->name('notificacions.show');
+
+    // NOTIFICACIONES USUARIO
+    Route::GET('notificacion_users', 'NotificacionUserController@index')
+        ->name('notificacion_users.index');
+    Route::GET('notificacion_users/nuevos', 'NotificacionUserController@nuevos')
+        ->name('notificacion_users.nuevos');
 
     //REPORTES
     Route::GET('reportes', 'ReporteController@index')->name('reportes.index');

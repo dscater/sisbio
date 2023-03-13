@@ -25,7 +25,10 @@
             <span class="span-2"></span>
             <span class="span-3"></span>
         </div>
-        <ul class="menu_user">
+        <ul class="menu_user notificaciones">
+            <li class="notificaciones" id="contenedor_notificaciones">
+
+            </li>
             <li>
                 <a href="#" onclick="event.preventDefault();">
                     @if (Auth::user()->datos_usuario)
@@ -94,10 +97,12 @@
                             </li>
                         @endcan
                         @can('personals.index')
-                            <li class="contenedor-sub-menu {{ request()->is('personal*') ? 'activado' : '' }} {{ request()->is('personal*') || request()->is('asistencias*') || request()->is('formacion*') || request()->is('especializacion*') || request()->is('experiencia*') || request()->is('contratos*') || request()->is('pagos_extras*') || request()->is('descuentos*') || request()->is('pagos*') ? 'activado abierto' : '' }}">
+                            <li
+                                class="contenedor-sub-menu {{ request()->is('personal*') ? 'activado' : '' }} {{ request()->is('personal*') || request()->is('asistencias*') || request()->is('formacion*') || request()->is('especializacion*') || request()->is('experiencia*') || request()->is('contratos*') || request()->is('pagos_extras*') || request()->is('descuentos*') || request()->is('pagos*') ? 'activado abierto' : '' }}">
                                 <a href="#"><span><i class="fa fa-users"></i></span>Personal <span class="flecha"><i
                                             class="fa fa-caret-down"></i></span></a>
-                                <ul class="sub-menu {{ request()->is('personal*') || request()->is('asistencias*') || request()->is('formacion*') || request()->is('especializacion*') || request()->is('experiencia*') || request()->is('contratos*') || request()->is('pagos_extras*') || request()->is('descuentos*') || request()->is('pagos*') ? '' : 'oculto' }}" id="opciones_personal">
+                                <ul class="sub-menu {{ request()->is('personal*') || request()->is('asistencias*') || request()->is('formacion*') || request()->is('especializacion*') || request()->is('experiencia*') || request()->is('contratos*') || request()->is('pagos_extras*') || request()->is('descuentos*') || request()->is('pagos*') ? '' : 'oculto' }}"
+                                    id="opciones_personal">
                                     @can('personals.index')
                                         <li
                                             class="{{ request()->is('personals') ? 'activado' : '' }} {{ request()->is('personals/show*') ? 'activado' : '' }} {{ request()->is('personals/create*') ? 'activado' : '' }} {{ request()->is('personals/edit*') ? 'activado' : '' }}">
@@ -163,6 +168,10 @@
                                             class="fa fa-clock"></i></span>Horarios</a>
                             </li>
                         @endcan
+                        <li class="{{ request()->is('notificacions*') ? 'activado' : '' }}">
+                            <a href="{{ route('notificacions.index') }}"><span><i
+                                        class="fa fa-bell"></i></span>Notificación de asistencias</a>
+                        </li>
                         <li class="{{ request()->is('reportes*') ? 'activado' : '' }}">
                             <a href="{{ route('reportes.index') }}"><span><i
                                         class="fa fa-file-pdf"></i></span>Reportes
@@ -179,6 +188,9 @@
 
         <input type="text" value="{{ csrf_token() }}" id="token" hidden>
         <input type="text" value="{{ asset('') }}" id="public" hidden>
+        <input type="text" value="{{ route('notificacion_users.index') }}" id="urlNotificacionesUsuario" hidden>
+        <input type="text" value="{{ route('notificacion_users.nuevos') }}" id="urlNuevasNotificacionesUsuario"
+            hidden>
 
     </div>
 
@@ -186,7 +198,8 @@
     <script src="{{ asset('lib/bootstrap-3.3.7/dist/js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/inicio.js') }}"></script>
     <script src="{{ asset('js/menu.js') }}"></script>
-
+    {{-- scrip para obtener las Asistencias y Notificaciones --}}
+    <script src="{{ asset('js/notificaciones.js') }}"></script>
     <script src="{{ asset('js/obtener_personal.js') }}"></script>
     @yield('scripts')
 </body>

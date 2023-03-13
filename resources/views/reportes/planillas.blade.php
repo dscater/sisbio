@@ -1,280 +1,251 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Planilla de sueldos</title>
-  <style>
-  *{
-    font-family: sans-serif;
-  }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Planilla de sueldos</title>
+    <style>
+        * {
+            font-family: Arial, Helvetica, sans-serif;
+        }
 
-  @page {
-    margin-top: 2cm;
-    margin-bottom: 1cm;
-    margin-left: 0.5cm;
-    margin-right:  0.5cm;
-    border: 5px solid blue;
-  }
+        @page {
+            margin-top: 2cm;
+            margin-bottom: 1cm;
+            margin-left: 0.5cm;
+            margin-right: 0.5cm;
+            border: 5px solid blue;
+        }
 
-  *{
-    font-family: sans-serif;
-  }
+        * {}
 
 
-  h4.area{
-    font-family: sans-serif;
-    text-align: center;
-  }
+        h4.area {
+            text-align: center;
+        }
 
-  table{
-    table-layout: fixed;
-    width: 100%;
-  }
+        table {
+            table-layout: fixed;
+            width: 100%;
+        }
 
-  table tbody tr td{
-    text-align: center;
-    border:solid 1px;
-    word-wrap: break-word;
-    font-size: 0.7em;
-    padding: 2px;
-  }
+        table tbody tr td {
+            text-align: center;
+            word-wrap: break-word;
+            font-size: 0.7em;
+            padding: 2px;
+        }
 
-  table thead tr th{
-    font-size: 0.7em;
-    text-align: center;
-    border:solid 1px;
-    word-wrap: break-word;
-  }
+        table thead tr th {
+            font-size: 0.7em;
+            text-align: center;
+            border: solid 1px;
+            word-wrap: break-word;
+        }
 
-  #contenedor_info{
-    width: 100%;
-    height: 55px;
-  }
+        #contenedor_info {
+            width: 100%;
+            height: 55px;
+        }
 
-  #informacion1{
-    display: inline-block;
-    width: 70%;
-  }
 
-  #informacion2{
-    display: inline-block;
-    width: 30%;
-  }
+        #pie {
+            position: absolute;
+            width: 100%;
+            font-size: 0.7em;
+            display: block;
+            bottom: 10px;
+        }
 
-  #informacion1 div{
-    width: 100%;
-  }
-  #informacion2 div{
-    width: 100%;
-  }
+        #pie div.nombre_empleador {
+            width: 280px;
+            left: 60px;
+            display: inline-block;
+            position: absolute;
+        }
 
-  #informacion1 span{
-    margin: 3px;
-    display: inline-block;
-    padding: 4px;
-  }
+        #pie div.nro_documento {
+            width: 210px;
+            left: 460px;
+            display: inline-block;
+            position: absolute;
+        }
 
-  #informacion2 span{
-    margin: 3px;
-    display: inline-block;
-    padding: 4px;
-  }
+        #pie div.firma {
+            width: 150px;
+            left: 800px;
+            display: inline-block;
+            position: absolute;
+        }
 
-  #informacion2 span.span_{
-    margin-right: 68px;
-  }
+        #pie div.fecha {
+            width: 90px;
+            left: 1060px;
+            display: inline-block;
+            position: absolute;
+        }
 
-  #informacion1 span.span1{
-    display: inline-block;
-    position: relative;
-    border:solid 1px rgb(0, 0, 0);
-    width: 71.2%;
-    margin-left: 5px;
-  }
+        #pie div.nombre_empleador p {
+            display: block;
+            text-align: center;
+            width: 100%;
+        }
 
-  #informacion1 span.span2{
-    display: inline-block;
-    position: relative;
-    border:solid 1px rgb(0, 0, 0);
-    width: 35%;
-    padding: 4px;
-    margin-left: 5px;
-  }
+        #pie div.nro_documento p {
+            display: block;
+            text-align: center;
+            width: 100%;
+        }
 
-  #informacion2 span.span3{
-    display: inline-block;
-    border:solid 1px rgb(0, 0, 0);
-    width: 50%;
-    padding: 3px;
-    margin-left: 5px;
-  }
+        #pie div.firma p {
+            display: block;
+            text-align: center;
+            width: 100%;
+        }
 
-  #informacion2 span.span4{
-    display: inline-block;
-    border:solid 1px rgb(0, 0, 0);
-    width: 50%;
-    padding: 3px;
-    margin-left: 5px;
-  }
+        #pie div.fecha p {
+            display: block;
+            text-align: center;
+            width: 100%;
+        }
 
-  #encabezado{
-    padding-top: 0;
-    width: 100%;
-  }
+        #pie div.fecha span {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
 
-  #encabezado > h2{
-    font-size: 1.8em;
-    position: relative;
-    text-align: center;
-    font-family: sans-serif;
-  }
+        .titulo {
+            font-weight: bold;
+            width: 100%;
+            text-align: center;
+        }
 
-  #encabezado > h4.titulo_pdf{
-  }
+        .texto {
+            font-weight: bold;
+            font-size: 1.1em;
+            width: 100%;
+            text-align: center;
+        }
 
-  #encabezado > h4{
-    font-size: 1.2em;
-    text-align: center;
-    font-family: sans-serif;
-  }
+        .descripcion {
+            width: 100%;
+            text-align: center;
+        }
 
-  #pie{
-    position: absolute;
-    width: 100%;
-    font-size: 0.7em;
-    display: block;
-    bottom: 10px;
-  }
+        .info_empresa {
+            width: 80%;
+            margin: auto;
+        }
 
-  #pie div.nombre_empleador{
-    width: 280px;
-    left: 60px;
-    display: inline-block;
-    position: absolute;
-  }
+        .info_empresa tbody tr td {
+            font-size: 0.8em;
+        }
 
-  #pie div.nro_documento{
-    width: 210px;
-    left: 460px;
-    display: inline-block;
-    position: absolute;
-  }
+        .izquierda {
+            text-align: left;
+        }
 
-  #pie div.firma{
-    width: 150px;
-    left: 800px;
-    display: inline-block;
-    position: absolute;
-  }
+        .bold {
+            font-weight: bold;
+        }
 
-  #pie div.fecha{
-    width: 90px;
-    left: 1060px;
-    display: inline-block;
-    position: absolute;
-  }
+        .centreado {
+            text-align: center;
+        }
 
-  #pie div.nombre_empleador p{
-    display: block;
-    text-align: center;
-    width: 100%;
-  }
+        .pl-5 {
+            padding-left: 5px;
+        }
 
-  #pie div.nro_documento p{
-    display: block;
-    text-align: center;
-    width: 100%;
-  }
+        .pr-5 {
+            padding-right: 5px;
+        }
 
-  #pie div.firma p{
-    display: block;
-    text-align: center;
-    width: 100%;
-  }
+        .pt-5 {
+            padding-top: 5px;
+        }
 
-  #pie div.fecha p{
-    display: block;
-    text-align: center;
-    width: 100%;
-  }
-
-  #pie div.fecha span{
-    display: block;
-    width: 100%;
-    text-align: center;
-  }
-  </style>
-  <link rel="stylesheet" href="{{ asset('lib/bootstrap-3.3.7/dist/css/bootstrap.min.css')}}">
+        .pb-5 {
+            padding-bottom: 5px;
+        }
+    </style>
+    <link rel="stylesheet" href="{{ asset('lib/bootstrap-3.3.7/dist/css/bootstrap.min.css') }}">
 </head>
+
 <body>
-  <div id="contenedor_info">
-    <div id="informacion1">
-      <div><span>NOMBRE O RAZÓN SOCIAL</span> <span class="span1">{{$empresa->name}}</span></div>
-      <div><span>N° IDENTIFICADOR DEL EMPLEADOR ANTE EL MINISTERIO DE TRABAJO</span> <span class="span2">{{$empresa->nro_autorizacion}}</span></div>
+    <div class="titulo">PLANILLA DE SUELDOS Y SALARIOS</div>
+    <div class="texto">PERSONAL PERMANENTE</div>
+    <div class="descripcion">(En Bolivianos)</div>
+    <table class="info_empresa">
+        <tbody>
+            <tr>
+                <td class="bold izquierda" width="17%">NOMBRE O RAZÓN SOCIAL: </td>
+                <td class="izquierda pl-5">{{ $empresa->name }}</td>
+                <td class="bold izquierda" width="10%">N° EMPLEADOR</td>
+                <td class="izquierda pl-5">{{ $empresa->nro_empleador }}}</td>
+            </tr>
+            <tr>
+                <td class="bold izquierda">N° DE NIT:</td>
+                <td class="izquierda pl-5">{{ $empresa->nit }}</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+
+    @if ($sw == 1)
+        @include('reportes.parcials.sw_planilla1')
+    @endif
+
+    @if ($sw == 2)
+        @include('reportes.parcials.sw_planilla2')
+    @endif
+
+    @if ($sw == 3)
+        @include('reportes.parcials.sw_planilla3')
+    @endif
+
+    @if ($sw == 4)
+        @include('reportes.parcials.sw_planilla4')
+    @endif
+
+    @if ($sw == 5)
+        @include('reportes.parcials.sw_planilla5')
+    @endif
+
+    @if ($sw == 6)
+        @include('reportes.parcials.sw_planilla6')
+    @endif
+
+    @if ($sw == 7)
+        @include('reportes.parcials.sw_planilla7')
+    @endif
+
+    @if ($sw == 8)
+        @include('reportes.parcials.sw_planilla8')
+    @endif
+
+    <div id="pie">
+        <div class="nombre_empleador">
+            <span>........................................................................................................</span>
+            <p>NOMBRE DEL EMPLEADOR O REPRESENTANTE LEGAL</p>
+        </div>
+        <div class="nro_documento">
+            <span>.............................................................................</span>
+            <p>N° DE DOCUMENTO DE IDENTIDAD</p>
+        </div>
+        <div class="firma">
+            <span>........................................................</span>
+            <p>FIRMA</p>
+        </div>
+        <div class="fecha">
+            <span>{{ date('d-m-Y') }}</span>
+            <p>FECHA</p>
+        </div>
     </div>
-    <div id="informacion2">
-      <div><span class="span_">N° DE NIT</span> <span class="span3">{{$empresa->nit}}</span></div>
-      <div><span>N° DE EMPLEADOR</span> <span class="span4">{{$empresa->nro_empleador}}</span></div>
-    </div>
-  </div>
-
-  <div id="encabezado">
-    <h2>PLANILLA DE SUELDOS Y SALARIOS</h2>
-    <h4 class="titulo_pdf">(En Bolivianos)</h4>
-    <h4>CORRESPONDIENTE AL MES DE {{$array_mes_pdf[$valor_mes]}} DE {{$valor_anio}}</h4>
-  </div>
-
-  @if($sw == 1)
-  @include('reportes.parcials.sw_planilla1')
-  @endif
-
-  @if($sw==2)
-  @include('reportes.parcials.sw_planilla2')
-  @endif
-
-  @if($sw==3)
-  @include('reportes.parcials.sw_planilla3')
-  @endif
-
-  @if($sw==4)
-  @include('reportes.parcials.sw_planilla4')
-  @endif
-
-  @if($sw == 5)
-  @include('reportes.parcials.sw_planilla5')
-  @endif
-
-  @if($sw==6)
-  @include('reportes.parcials.sw_planilla6')
-  @endif
-
-  @if($sw==7)
-  @include('reportes.parcials.sw_planilla7')
-  @endif
-
-  @if($sw==8)
-  @include('reportes.parcials.sw_planilla8')
-  @endif
-
-  <div id="pie">
-    <div class="nombre_empleador">
-      <span>........................................................................................................</span>
-      <p>NOMBRE DEL EMPLEADOR O REPRESENTANTE LEGAL</p>
-    </div>
-    <div class="nro_documento">
-      <span>.............................................................................</span>
-      <p>N° DE DOCUMENTO DE IDENTIDAD</p>
-    </div>
-    <div class="firma">
-      <span>........................................................</span>
-      <p>FIRMA</p>
-    </div>
-    <div class="fecha">
-      <span>{{date('d-m-Y')}}</span>
-      <p>FECHA</p>
-    </div>
-  </div>
 </body>
+
 </html>
